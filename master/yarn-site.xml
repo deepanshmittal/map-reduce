@@ -1,7 +1,19 @@
 <?xml version="1.0"?>
 <configuration>
+	<property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+	<property>
+        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+    </property>
     <property>
         <name>yarn.resourcemanager.hostname</name>
-        <value>master</value>
+        <value>192.168.56.50</value>
+    </property>
+	<property>
+        <name>yarn.resourcemanager.address</name>
+        <value>192.168.56.50:8032</value>
     </property>
 </configuration>
