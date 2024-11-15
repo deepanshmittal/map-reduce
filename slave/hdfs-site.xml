@@ -2,8 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
     <property>
-        <name>dfs.datanode.data.dir</name>
-        <value>${user.home}/bigdata/hd-data/dn</value>
+        <name>dfs.data.dir</name>
+        <value>${user.home}/bigdata/dn</value>
     </property>
     <property>
         <name>dfs.replication</name>

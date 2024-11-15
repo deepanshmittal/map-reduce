@@ -1,19 +1,27 @@
 <?xml version="1.0"?>
 <configuration>
 	<property>
-        <name>yarn.nodemanager.aux-services</name>
-        <value>mapreduce_shuffle</value>
-    </property>
+		<name>yarn.resourcemanager.hostname</name>
+		<value>master</value>
+	</property>
 	<property>
-        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
-    </property>
-    <property>
-        <name>yarn.resourcemanager.hostname</name>
-        <value>192.168.56.50</value>
-    </property>
+		<name>yarn.nodemanager.aux-services</name>
+		<value>mapreduce_shuffle</value>
+	</property>
 	<property>
-        <name>yarn.resourcemanager.address</name>
-        <value>192.168.56.50:8032</value>
-    </property>
+		<name>yarn.nodemanager.local-dirs</name>
+		<value>${user.home}/bigdata/yarn/data</value>
+	</property>
+	<property>
+		<name>yarn.nodemanager.logs-dirs</name>
+		<value>${user.home}/bigdata/yarn/logs</value>
+	</property>
+	<property>
+			<name>yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage</name>
+			<value>99.9</value>
+	</property>
+	<property>
+	<name>yarn.nodemanager.vmem-check-enabled</name>
+		<value>false</value>
+	</property>
 </configuration>

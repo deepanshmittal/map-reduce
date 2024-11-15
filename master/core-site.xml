@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
     <property>
-        <name>fs.default.name</name>
-        <value>hdfs://192.168.56.50:9000</value>
+        <name>fs.defaultFS</name>
+        <value>hdfs://master:9000</value>
     </property>
 </configuration>

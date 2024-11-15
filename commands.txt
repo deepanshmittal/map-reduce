@@ -1,0 +1,44 @@
+osboxes
+oxboxes.org
+
+sudo adduser hduser
+sudo usermod -aG sudo hduser
+
+sudo apt update
+
+sudo apt install vim ssh net-tools openjdk-8-jdk git python3-pip
+sudo pip3 install scikit-learn
+
+sudo vim /etc/netplan/01-netcfg.yaml
+network:
+    version: 2
+    renderer: networkd
+    ethernets:
+        enp0s3:
+            dhcp4: true
+        enp0s8:
+            addresses: [192.168.56.50/24]
+            dhcp4: false
+			
+sudo netplan apply
+
+sudo vim /etc/hosts
+192.168.56.50   master
+192.168.56.51   worker1
+
+sudo hostnamectl set-hostname {name}
+
+vim ~/.bashrc
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=$HOME/hadoop
+export PATH=$HADOOP_HOME/sbin:$HADOOP_HOME/bin:$PATH
+
+source ~/.bashrc
+
+master terminal> ssh-keygen -t rsa -P ""
+master terminal> ssh-copy-id hduser@master
+master terminal> ssh-copy-id hduser@worker1
+
+master terminal> hdfs namenode -format
+master terminal> start-dfs.sh
+master terminal> start-yarn.sh
