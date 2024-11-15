@@ -22,6 +22,10 @@ network:
 			
 sudo netplan apply
 
+wget https://archive.apache.org/dist/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+tar xvf hadoop-2.7.3
+mv hadoop-2.7.3 hadoop
+
 sudo vim /etc/hosts
 192.168.56.50   master
 192.168.56.51   worker1
@@ -42,3 +46,5 @@ master terminal> ssh-copy-id hduser@worker1
 master terminal> hdfs namenode -format
 master terminal> start-dfs.sh
 master terminal> start-yarn.sh
+
+
