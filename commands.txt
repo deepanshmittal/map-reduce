@@ -25,12 +25,14 @@ network:
 sudo netplan apply
 
 wget https://archive.apache.org/dist/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
-tar xvf hadoop-2.7.3
+tar xvf hadoop-2.7.3.tar.gz
 mv hadoop-2.7.3 hadoop
 
 sudo vim /etc/hosts
 192.168.56.50   master
 192.168.56.51   worker1
+
+
 
 sudo hostnamectl set-hostname {name}
 
@@ -40,6 +42,8 @@ export HADOOP_HOME=$HOME/hadoop
 export PATH=$HADOOP_HOME/sbin:$HADOOP_HOME/bin:$PATH
 
 source ~/.bashrc
+
+cp map-reduce/master/* $HADOOP_HOME/etc/hadoop/
 
 master terminal> ssh-keygen -t rsa -P ""
 master terminal> ssh-copy-id hduser@master
