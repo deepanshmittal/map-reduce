@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """reducer.py"""
 
 from sklearn.cluster import KMeans
